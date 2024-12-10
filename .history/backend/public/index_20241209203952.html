@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ff0000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Adding Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- Adding custom snowflake animation script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const body = document.querySelector('body');
+        for (let i = 0; i < 50; i++) {
+          const snowflake = document.createElement('div');
+          snowflake.classList.add('snowflake');
+          snowflake.textContent = '❄️';
+          snowflake.style.left = Math.random() * 100 + 'vw';
+          snowflake.style.animationDelay = Math.random() * 5 + 's';
+          snowflake.style.fontSize = Math.random() * 15 + 10 + 'px';
+          body.appendChild(snowflake);
+        }
+      });
+    </script>
+
+    <!-- Adding custom styles for snowflakes -->
+    <style>
+      body {
+        overflow: hidden;
+        position: relative;
+      }
+      .snowflake {
+        position: absolute;
+        top: -50px;
+        animation: snowfall linear infinite;
+        opacity: 0.8;
+      }
+      @keyframes snowfall {
+        0% {
+          transform: translateY(-50px);
+        }
+        100% {
+          transform: translateY(110vh);
+        }
+      }
+    </style>
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>React App - Christmas Edition</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
